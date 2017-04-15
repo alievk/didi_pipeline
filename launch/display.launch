@@ -1,0 +1,13 @@
+<launch>
+	<param name="use_sim_time" type="bool" value="true"/>
+
+	<arg name="rosbag_file" default="rosbag_file_not_specified.bag"/>
+	
+	<node name="player" pkg="rosbag" type="play" output="screen" args="-l --clock $(arg rosbag_file)"/>
+	
+	<include file="$(find velodyne_pointcloud)/launch/32e_points.launch"/>
+	
+	<include file="$(find didi_pipeline)/launch/tf.launch"/>
+	
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find didi_pipeline)/launch/display.rviz"/>
+</launch>
