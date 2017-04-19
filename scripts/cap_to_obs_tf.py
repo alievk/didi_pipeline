@@ -40,8 +40,6 @@ def rtk_position_to_numpy(msg):
 
 
 def get_yaw(p1, p2):
-    if abs(p1[0] - p2[0]) < 1e-2:
-        return 0.
     return np.arctan2(p1[1] - p2[1], p1[0] - p2[0])
 
 
