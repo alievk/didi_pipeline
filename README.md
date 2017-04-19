@@ -3,6 +3,10 @@ ROS (catkin) package for Udacity/Didi Competition data visualization and modelli
 ### Dependencies
 This requires ROS Kinetic. Please refer to the [ROS Documentation](http://wiki.ros.org/ROS/Tutorials/BuildingPackages) on how to build catkin packages.
 
+Other dependencies:
+* numpy
+* ROS Velodyne driver https://bitbucket.org/DataspeedInc/ros_binaries
+
 ### Usage
 Launch the visualiver:
 ```
