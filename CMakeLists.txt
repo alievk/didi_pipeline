@@ -18,6 +18,15 @@ find_package(catkin REQUIRED COMPONENTS
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
+# PCL
+find_package(PCL 1.5 REQUIRED)
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+MESSAGE("PCL information:") 
+MESSAGE("  PCL_INCLUDE_DIRS: ${PCL_INCLUDE_DIRS}") 
+MESSAGE("  PCL_LIBRARIES: ${PCL_LIBRARIES}") 
+MESSAGE("  PCL_DEFINITIONS: ${PCL_DEFINITIONS}") 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -152,6 +161,7 @@ roslaunch_add_file_check(launch)
 ## Specify libraries to link a library or executable target against
 target_link_libraries(${PROJECT_NAME}_node
   ${catkin_LIBRARIES}
+  ${PCL_LIBRARIES}
 )
 
 #############
