@@ -6,8 +6,4 @@
 	<include file="$(find didi_pipeline)/launch/tf.launch"/>
 	
 	<node name="didi_rviz" pkg="rviz" type="rviz" args="-d $(find didi_pipeline)/launch/display.rviz"/>
-	
-	<arg name="display_only" default="true"/>
-	
-	<include file="$(find didi_pipeline)/launch/play.launch" unless="$(arg display_only)"/>
 </launch>
